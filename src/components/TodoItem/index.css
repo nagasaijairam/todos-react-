@@ -1,0 +1,57 @@
+/* Write your CSS here */
+.normal1 {
+  font-family: 'roboto';
+}
+
+.normal2 {
+  text-decoration: line-through;
+}
+
+.delete-button {
+  border-style: none;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: none;
+}
+
+.check1 {
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  align-self: center;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.listItem {
+  display: flex;
+  width: 75vw;
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.list-div {
+  display: flex;
+  width: 70vw;
+  justify-content: space-between;
+  height: 38px;
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-right: 10px;
+  background-color: #e6f6ff;
+  width: 100%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #096f92;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 4px;
+  align-items: center;
+  margin-top: 10px;
+}

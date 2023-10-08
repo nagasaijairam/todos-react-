@@ -1,0 +1,62 @@
+/* Write your CSS here */
+.input-element {
+  background-color: white;
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e4e7eb;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 15px;
+}
+
+.btn1 {
+  height: 39px;
+  width: 75px;
+  background-color: #0275d8;
+  color: white;
+  font-family: roboto;
+  border-style: none;
+  font-size: 18px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.main-div {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  height: 100vh;
+  width: 100vw;
+}
+
+.ul1 {
+  list-style: none;
+}
+
+.card-div {
+  width: 80vw;
+  align-self: center;
+  align-items: center;
+}
+
+.head1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 500;
+  font-family: 'Roboto';
+}
+
+.task1 {
+  font-weight: 600;
+  font-family: 'Roboto';
+  font-size: 32px;
+}
+
+.main-head2 {
+  font-weight: 300;
+  font-family: 'Roboto';
+  font-size: 32px;
+}
