@@ -6,45 +6,25 @@ import TodoItem from '../TodoItem/index'
 
 import './index.css'
 
-const initialTodosList = [
-  {
-    id: 1,
-    title: 'Book the ticket for today evening',
-  },
-  {
-    id: 2,
-    title: 'Rent the movie for tomorrow movie night',
-  },
-  {
-    id: 3,
-    title: 'Confirm the slot for the yoga session tomorrow morning',
-  },
-  {
-    id: 4,
-    title: 'Drop the parcel at Bloomingdale',
-  },
-  {
-    id: 5,
-    title: 'Order fruits on Big Basket',
-  },
-  {
-    id: 6,
-    title: 'Fix the production issue',
-  },
-  {
-    id: 7,
-    title: 'Confirm my slot for Saturday Night',
-  },
-  {
-    id: 8,
-    title: 'Get essentials for Sunday car wash',
-  },
-]
-
 // Write your code here
 
+const LocalStorage = () => {
+  const stringifiedTodoList = localStorage.getItem('todosList')
+  const parsedTodoList = JSON.parse(stringifiedTodoList)
+
+  if (parsedTodoList === undefined) {
+    return null
+  }
+  return parsedTodoList
+}
+
+const ans = LocalStorage() ? LocalStorage() : []
+console.log(ans)
+
+console.log(ans)
+
 class SimpleTodos extends Component {
-  state = {totosList: [], userInput: ''}
+  state = {todosList: [...ans], userInput: ''}
 
   inputElement = () => {
     const {userInput} = this.state
@@ -62,12 +42,11 @@ class SimpleTodos extends Component {
   }
 
   onDeleteItem = id => {
-    const {totosList} = this.state
+    const {todosList} = this.state
 
-    const updatedList = totosList.filter(i => i.id !== id)
-    this.setState({totosList: updatedList})
+    const updatedList = todosList.filter(i => i.id !== id)
 
-    console.log(updatedList)
+    this.setState({todosList: updatedList})
   }
 
   onUserInput = event => {
@@ -84,7 +63,7 @@ class SimpleTodos extends Component {
       alert('Please Enter the Text')
     } else {
       this.setState(prevState => ({
-        totosList: [...prevState.totosList, newTodo],
+        todosList: [...prevState.todosList, newTodo],
         userInput: '',
       }))
     }
@@ -92,21 +71,14 @@ class SimpleTodos extends Component {
 
   onSave = () => {
     const {todosList} = this.state
-    localStorage.setItem('todosList', JSON.stringify(todosList))
-  }
-
-  LicalStorage = () => {
-    const stringifiedTodoList = localStorage.getItem('todosList')
-    const parsedTodoList = JSON.parse(stringifiedTodoList)
-
-    if (parsedTodoList === undefined) {
-      return null
+    if (todosList !== []) {
+      localStorage.setItem('todosList', JSON.stringify(todosList))
     }
-    return this.setState({todosList: parsedTodoList})
   }
 
   render() {
-    const {totosList} = this.state
+    const {todosList} = this.state
+    // console.log(todosList)
 
     return (
       <div className="main-div">
@@ -126,7 +98,7 @@ class SimpleTodos extends Component {
             </h1>
 
             <ul className="ul1">
-              {totosList.map(i => (
+              {todosList.map(i => (
                 <TodoItem
                   key={i.id}
                   details={i}
